@@ -12,7 +12,7 @@ func generate_num(n int) string {
 	var xi string
 	x_list := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 	for i := 0; i < n; i++ {
-		xi, x_list = delete(x_list, rand.Intn(10))
+		xi, x_list = delete(x_list, rand.Intn(len(x_list)))
 		x = x + xi
 	}
 	return x
