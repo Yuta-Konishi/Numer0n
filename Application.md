@@ -1,10 +1,10 @@
 # Application sheet
 - Application name : Numer0n
 - Features
-    - generate a random 1 digit number
-    - impriment "eat"
-    - generate a random 2 digit number
-    - impriment "bite"
-    - improvement "eat"
-    - generate a random 3 digit number
-    - generate a random number by an input
+    - フジテレビの番組「NumerΦn」を参照
+    - コンピュータが3桁の数字をランダムに生成（数字に重複なし）
+    - プレイヤーがコンピュータの数字を推測してコールする
+    - コールされた数字に対して、どの程度あっているかを発表する
+        - eat : 数字と桁が合っていた場合
+        - bite : 数字は合っているが桁は合っていない場合
+    - これを繰り返し、コンピュータの数字をすべて当て切ればプレイヤーの勝利とし、ゲーム終了
