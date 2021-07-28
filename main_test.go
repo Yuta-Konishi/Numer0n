@@ -41,8 +41,10 @@ func TestGenerate_num03(t *testing.T) {
 }
 
 func TestEatBite01(t *testing.T) {
-	eat, bite = EatBite(1, 1)
+	eat, bite := EatBite("1", "1")
 	if eat != 1 {
+		t.Error("TestEatBite01 is failed")
+	} else if bite != 0 {
 		t.Error("TestEatBite01 is failed")
 	}
 }
