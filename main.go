@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func Generate_num(n int) string {
+func generate_num(n int) string {
 	rand.Seed(time.Now().UnixNano())
 	var x string
 	var xi string
@@ -35,6 +35,6 @@ func main() {
 	var n int
 	fmt.Print("Enter the number of digits of the number to be generated : ")
 	fmt.Scan(&n)
-	x := Generate_num(n)
+	x := generate_num(n)
 	fmt.Println(x)
 }
