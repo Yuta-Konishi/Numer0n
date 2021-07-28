@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -16,6 +17,26 @@ func Generate_num(n int) string {
 		x = x + xi
 	}
 	return x
+}
+
+func EatBite(x string, call string) (int, int) {
+	eat, bite := 0, 0
+	x_arr := strings.Split(x, "")
+	call_arr := strings.Split(call, "")
+
+	for i := 0; i < len(call_arr); i++ {
+		for j := 0; j < len(x_arr); j++ {
+			if call_arr[i] == x_arr[j] {
+				if i == j {
+					eat++
+				} else {
+					bite++
+				}
+			}
+		}
+	}
+
+	return eat, bite
 }
 
 func delete(slice []string, i int) (string, []string) {
@@ -33,8 +54,16 @@ func delete(slice []string, i int) (string, []string) {
 
 func main() {
 	var n int
+	var call string
+	eat, bite := 0, 0
 	fmt.Print("Enter the number of digits of the number to be generated : ")
 	fmt.Scan(&n)
 	x := Generate_num(n)
 	fmt.Println(x)
+	for eat < n {
+		fmt.Scan(&call)
+		eat, bite = EatBite(x, call)
+		fmt.Printf("%dEAT %dBITE\n", eat, bite)
+	}
+	fmt.Println("success!")
 }
