@@ -75,3 +75,30 @@ func TestEatBite04(t *testing.T) {
 		t.Error("TestEatBite04 is failed")
 	}
 }
+
+func TestEatBite05(t *testing.T) {
+	eat, bite := EatBite("123", "234")
+	if eat != 0 {
+		t.Error("TestEatBite05 is failed")
+	} else if bite != 2 {
+		t.Error("TestEatBite05 is failed")
+	}
+}
+
+func TestEatBite06(t *testing.T) {
+	eat, bite := EatBite("456", "546")
+	if eat != 1 {
+		t.Error("TestEatBite06 is failed")
+	} else if bite != 2 {
+		t.Error("TestEatBite06 is failed")
+	}
+}
+
+func TestEatBite07(t *testing.T) {
+	eat, bite := EatBite("789", "780")
+	if eat != 2 {
+		t.Error("TestEatBite07 is failed")
+	} else if bite != 0 {
+		t.Error("TestEatBite07 is failed")
+	}
+}
