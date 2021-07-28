@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func generate_num(n int) string {
+func Generate_num(n int) string {
 	rand.Seed(time.Now().UnixNano())
 	var x string
 	var xi string
@@ -16,6 +16,15 @@ func generate_num(n int) string {
 		x = x + xi
 	}
 	return x
+}
+
+func EatBite(x string, call string) (int, int) {
+	eat, bite := 0, 0
+	if x == call {
+		eat = len(x)
+	}
+
+	return eat, bite
 }
 
 func delete(slice []string, i int) (string, []string) {
@@ -33,8 +42,15 @@ func delete(slice []string, i int) (string, []string) {
 
 func main() {
 	var n int
+	var call string
+	eat, bite := 0, 0
 	fmt.Print("Enter the number of digits of the number to be generated : ")
 	fmt.Scan(&n)
-	x := generate_num(n)
+	x := Generate_num(n)
 	fmt.Println(x)
+	for eat < n {
+		fmt.Scan(&call)
+		eat, bite = EatBite(x, call)
+		fmt.Printf("%dEAT %dBITE\n", eat, bite)
+	}
 }
