@@ -39,3 +39,10 @@ func TestGenerate_num03(t *testing.T) {
 		t.Error("Test03 is failed")
 	}
 }
+
+func TestEatBite01(t *testing.T) {
+	eat, bite = EatBite(1, 1)
+	if eat != 1 {
+		t.Error("TestEatBite01 is failed")
+	}
+}
