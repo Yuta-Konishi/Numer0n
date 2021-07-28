@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -20,8 +21,19 @@ func Generate_num(n int) string {
 
 func EatBite(x string, call string) (int, int) {
 	eat, bite := 0, 0
-	if x == call {
-		eat = len(x)
+	x_arr := strings.Split(x, "")
+	call_arr := strings.Split(call, "")
+
+	for i := 0; i < len(call_arr); i++ {
+		for j := 0; j < len(x_arr); j++ {
+			if call_arr[i] == x_arr[j] {
+				if i == j {
+					eat++
+				} else {
+					bite++
+				}
+			}
+		}
 	}
 
 	return eat, bite
@@ -53,4 +65,5 @@ func main() {
 		eat, bite = EatBite(x, call)
 		fmt.Printf("%dEAT %dBITE\n", eat, bite)
 	}
+	fmt.Println("success!")
 }
