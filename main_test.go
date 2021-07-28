@@ -102,3 +102,17 @@ func TestEatBite07(t *testing.T) {
 		t.Error("TestEatBite07 is failed")
 	}
 }
+
+func TestHighLow01(t *testing.T) {
+	highlow := HighLow("194")
+	if highlow != "LOW*HIGH*LOW" {
+		t.Error("TestHighLow01 is failed")
+	}
+}
+
+func TestHighLow02(t *testing.T) {
+	highlow := HighLow("586")
+	if highlow != "HIGH*HIGH*HIGH" {
+		t.Error("TestHighLow02 is failed")
+	}
+}
